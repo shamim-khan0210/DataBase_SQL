@@ -1,0 +1,13 @@
+//for create database
+
+CREATE DATABASE TABLE;
+
+
+//for show database
+
+SHOW DATABASES;
+
+
+//for delete database
+
+DROP DATABASE TABLE;
