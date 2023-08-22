@@ -1,0 +1,12 @@
+//For create table
+
+CREATE TABLE student( 
+    Roll int(5), 
+    Name varchar(15), 
+    Gender varchar(6), 
+    Age int(2), 
+    GPA double(3,2), 
+    City varchar(10), 
+    PRIMARY KEY(Roll)
+    
+);
