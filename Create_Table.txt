@@ -5,8 +5,20 @@ CREATE TABLE student(
     Name varchar(15), 
     Gender varchar(6), 
     Age int(2), 
-    GPA double(3,2), 
+    GPA double(3,2), //frist 3 means total digits and senond 2 means, 2 digits after decimal point
     City varchar(10), 
     PRIMARY KEY(Roll)
     
 );
+
+//For Rename table name
+
+RENAME TABLE student TO student_details;
+
+
+
+//Insert Value into table
+
+INSERT INTO student_details(Roll, Name, Gender, Age, GPA, City) 
+VALUES(101, 'Shamim', 'Male', 23, 5.00, 'Rajshahi'),
+(102, 'Hasibul', 'Male', 24, 5.00, 'Dhaka');
