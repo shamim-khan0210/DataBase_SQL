@@ -1,0 +1,22 @@
+// For Find(Query) data from table
+
+SELECT Roll, Name, Gender
+FROM student_details;
+
+// For all show all Column
+SELECT *
+FROM  student_Details;
+
+//For show values of Attributes without duplicate using "DISTINCT"
+
+SELECT DISTINCT city
+FROM student_details; 
+
+//For Show the tables value limit using "LIMIT"
+SELECT *
+FROM student_details
+LIMIT 5;
+
+//SELECT *
+FROM student_details
+LIMIT 2, 5; // means, first 2 row didn't show. 3,4,5,6,7 (5) row show
