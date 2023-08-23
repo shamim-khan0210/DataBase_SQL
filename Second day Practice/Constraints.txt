@@ -1,0 +1,32 @@
+// Constraints 
+
+CREATE TABLE teacher( 
+    ID int NOT NULL AUTO_INCREMENT, 
+    Name varchar(15), 
+    Salary double(10, 2),
+    PRIMARY KEY (ID) 
+);
+
+INSERT INTO teacher(Name, Salary)
+VALUES('Shamim', 20000.20);
+
+
+// Update statement
+
+UPDATE teacher
+SET Salary = 35000.00
+WHERE ID = 2;
+
+UPDATE teacher
+SET Name = 'Hasibul'
+WHERE ID = 5;
+
+UPDATE teacher
+SET Salary = Salary+5000
+WHERE Salary > 20000.00;
+
+
+//Delete Statement
+
+DELETE FROM teacher
+WHERE id = 6;

@@ -1,0 +1,38 @@
+// Logical Operator
+
+
+//OR 
+
+SELECT *
+FROM people
+WHERE Thana ='Khetlal' OR Age>= '20';
+
+//AND
+
+SELECT *
+FROM people
+WHERE Thana ='Khetlal' AND (Age>= '20' OR NID > 10002);
+
+
+//IN
+
+SELECT *
+from people
+WHERE Thana IN ('Khetlal', 'Feni');
+
+//NOT IN
+
+SELECT *
+from people
+WHERE Thana NOT IN ('Khetlal', 'Feni');
+
+
+//LIKE
+
+SELECT *
+FROM people
+WHERE Name LIKE 'S%';
+
+SELECT *
+FROM people
+WHERE Name LIKE '__a%';

@@ -1,0 +1,56 @@
+// Upper/Lower function
+
+
+SELECT Upper('i am shamim khan');
+SELECT LOWER('i am shamim khan');
+
+SELECT UPPER(District)
+FROM people;
+
+SELECT UPPER(District) AS District_New_Name
+FROM people;
+
+
+//Functions
+
+
+//Add two content
+
+SELECT CONCAT(Name, ' is ', Age, 'Years old.')
+FROM people;
+
+SELECT CONCAT(Name, ' is ', Age, ' Years old.') AS Boys
+FROM people;
+
+
+// Greatest function
+
+SELECT greatest (10, 30, -90, 100);
+
+
+//Least function
+
+SELECT least (10, 23, -09);
+
+
+//Power function
+
+SELECT POW(2, 3);
+
+
+//Log function
+
+SELECT LOG10(2);
+
+
+//TRUNCATE (Show After decimal point number)
+
+SELECT TRUNCATE (10.34953534567, 3);
+SELECT TRUNCATE ( LOG10(2), 3);
+
+// Generate Random number
+
+SELECT rand();
+
+// Value of e
+SELECT EXP(4);

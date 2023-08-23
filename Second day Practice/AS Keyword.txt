@@ -1,0 +1,4 @@
+// AS Keyword
+
+SELECT Age AS Name, Name AS Thana
+FROM people;
