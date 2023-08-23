@@ -1,0 +1,41 @@
+CREATE TABLE people(
+    NID int(5),
+    Name varchar(15),
+    Age int(3),
+    Height double(2,1),
+    Weight int(3),
+    Thana varchar(10),
+    District varchar(10),
+    PRIMARY KEY(NID)
+);
+
+
+INSERT INTO people(NID, Name, Age, Height, Weight, Thana, District)
+VALUES(10001, 'Shamim Khan', 23, 5.5, 70, 'Khetlal', 'Joypurhat'),
+(10002, 'Hasibul Hasan', 24, 5.5, 70, 'Khetlal', 'Joypurhat'),
+(10003, 'Makkah', 13, 5.3, 48, 'Khetlal', 'Joypurhat'),
+(10004, 'Tarek', 20, 5.0, 52, 'Khetala', 'Joypurhat'),
+(10005, 'Noman', 17, 5.5, 65, 'Khetlal', 'Joypurhat'),
+(10006, 'Ayat', 1, 1.5, 12, 'Khetlal', 'Joypurhat'),
+(10007, 'Rahim', 30, 6.0, 80, 'Kalai', 'Joypurhat'),
+(10008, 'Karim', 40, 5.8, 70, 'Feni', 'Feni');
+
+
+SELECT NID, Name, District
+FROM people 
+
+SELECT *
+FROM `people` 
+LIMIT 3
+
+SELECT * 
+FROM `people` 
+LIMIT 2, 3
+
+SELECT * 
+FROM `people` 
+WHERE Thana='khetlal'
+
+
+SELECT DISTINCT District
+FROM people;
