@@ -35,3 +35,7 @@ LIMIT 2, 3
 SELECT * 
 FROM `people` 
 WHERE Thana='khetlal'
+
+
+SELECT DISTINCT District
+FROM people;
