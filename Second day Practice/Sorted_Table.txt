@@ -1,0 +1,11 @@
+//Sorting Name_Accending order
+
+SELECT Name
+FROM people
+ORDER BY Name;
+
+//Sorting Name_Decending order
+
+SELECT Name
+FROM people
+ORDER BY Name DESC;
