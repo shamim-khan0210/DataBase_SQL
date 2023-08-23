@@ -1,0 +1,22 @@
+// Find value using condition (Arithematic operator)
+
+SELECT Name,Thana
+FROM `people` 
+WHERE Thana= 'Khetlal';
+
+
+SELECT Name,Thana
+FROM `people` 
+WHERE Thana= 'Khetlal'
+ORDER BY Name DESC;
+
+
+// Using != and Between
+
+SELECT *
+FROM people
+WHERE NID BETWEEN 10002 and 10005;
+
+SELECT *
+FROM people
+WHERE Age != 20;
