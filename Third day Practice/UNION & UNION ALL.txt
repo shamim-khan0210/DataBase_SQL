@@ -1,0 +1,24 @@
+// UNION & UNION ALL --- need two table must be same Attribute
+
+
+//UNION--- Not consider duplicate values
+
+SELECT Roll, Name, Gender
+FROM  sylhet_Tour
+
+UNION
+
+SELECT Roll, Name, Gender
+FROM Dhaka_Tour
+
+
+//UNION ALL -- Consider all values from two table Attributes
+
+
+SELECT Roll, Name, Gender
+FROM  sylhet_Tour
+
+UNION ALL
+
+SELECT Roll, Name, Gender
+FROM Dhaka_Tour

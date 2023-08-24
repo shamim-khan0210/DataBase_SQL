@@ -1,0 +1,13 @@
+// Group by clause --- divide row in a small row
+
+// sum of different department salary
+SELECT Department, SUM(Salary)
+FROM teacher
+GROUP BY Department;
+
+
+// sum of different department salary by decending order
+SELECT Department, SUM(Salary)
+FROM teacher
+GROUP BY Department
+ORDER BY SUM(Salary) DESC;

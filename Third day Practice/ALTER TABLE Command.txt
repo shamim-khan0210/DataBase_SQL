@@ -1,0 +1,31 @@
+// ALTER TABLE Command ---It's related to Column
+
+
+
+//Add column
+
+ALTER TABLE teacher
+ADD Phone_Number int(15);
+
+
+
+// RENAME column
+
+ALTER TABLE teacher
+CHANGE Department Department_Name varchar(15);
+
+
+// Delete column
+
+ALTER TABLE teacher
+DROP COLUMN Department_Name;
+
+
+// Update column
+
+UPDATE teacher
+SET Phone_Number= 017234684562
+WHERE ID = 1;
+
+
+

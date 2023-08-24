@@ -1,0 +1,28 @@
+// VIEW
+
+// First create a new table 
+
+CREATE VIEW student_view AS
+SELECT Roll, Name, Gender
+FROM student_details;
+
+// Then
+SELECT *
+FROM student_view;
+
+
+//UPDATE VIEW TABLE
+UPDATE student_view
+SET Name = 'Hasan'
+WHERE Roll = 108;
+
+//INSERT VALUE INTO VIEW TABLE
+INSERT INTO student_view (Roll, Name, Gender)
+VALUES(120, 'Shamim', 'Male');
+
+//DELETE VALUES FROM VIEW TABLE
+DELETE FROM student_view
+WHERE Roll = 102;
+
+//DELETE VIEW
+DROP VIEW student_view

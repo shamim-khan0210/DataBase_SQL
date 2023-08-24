@@ -1,0 +1,16 @@
+// SUB Query -- Find value from rows from sub rows
+
+SELECT AVG(Salary)
+FROM teacher;
+
+SELECT * 
+FROM teacher
+WHERE Salary > 31800.040000;
+
+
+SELECT *
+FROM teacher
+WHERE Salary > (SELECT AVG(Salary) FROM teacher);
+
+
+

@@ -1,0 +1,36 @@
+// Aggregate Function, It's work on rows (AVG, COUNT, MAX, MIN, SUM)
+
+
+
+// DESCRIBE Function
+
+DESCRIBE student_details; //See table details
+
+
+//See row from the table
+
+SELECT COUNT(*)
+FROM student_details;
+
+
+//Maximum value of any column
+
+SELECT MAX(GPA)
+FROM student_details;
+
+
+//Minimum value of any column
+
+SELECT MIN(GPA)
+FROM student_details;
+
+
+//See SUM & AVG from any row
+
+SELECT SUM(Salary), AVG(Salary)
+FROM teacher;
+
+
+SELECT COUNT(*), MIN(Salary), MAX(Salary), SUM(Salary), AVG(Salary)
+FROM teacher;
+

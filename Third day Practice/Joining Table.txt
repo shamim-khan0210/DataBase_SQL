@@ -1,0 +1,45 @@
+// Joining Table
+
+//Join two table 
+//After creating 2 table add their Attributes
+
+SELECT student_details.Roll, Registration_No, Name, 
+Gender, Group_Type, GPA, City
+
+FROM student_details, exam_result
+WHERE student_details.Roll = exam_result.Roll;
+
+OR
+
+SELECT std.Roll, ex.Registration_No, std.Name
+FROM student_details AS std, exam_result AS ex
+WHERE std.Roll = ex.Roll;
+
+
+
+
+// Joining clause
+
+SELECT std.Roll, ex.Registration_No, std.Name 
+FROM student_details AS std JOIN exam_result AS ex 
+ON std.Roll = ex.Roll;
+
+
+//INNER JOIN-- Show matching value from two tables
+
+SELECT std.Roll, ex.Registration_No, std.Name 
+FROM student_details AS std INNER JOIN exam_result AS ex 
+ON std.Roll = ex.Roll;
+
+
+//Right JOIN -- show the matching value from two table but also show the right table all values
+
+SELECT std.Roll, ex.Registration_No, std.Name 
+FROM student_details AS std RIGHT JOIN exam_result AS ex 
+ON std.Roll = ex.Roll;
+
+//LEFT JOIN -- show the matching value from two table but also show the left table all values
+
+SELECT std.Roll, ex.Registration_No, std.Name 
+FROM student_details AS std LEFT JOIN exam_result AS ex 
+ON std.Roll = ex.Roll;

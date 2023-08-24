@@ -1,0 +1,4 @@
+// TRANCAT TABLE
+
+//Without deleting hole table just delete all value of attributes
+TRUNCATE TABLE student_details;
