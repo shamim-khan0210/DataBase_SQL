@@ -1,0 +1,107 @@
+regions:(region_id, region_name)
+countries:(country_id, country_name, region_id)
+locations:(location_id, street_address, postal_code, city, state_province, country_id)
+departments:(department_id, department_name, manager_id, location_id)
+jobs:(job_id, job_title, min_salary, max_salary)
+employees:(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
+job_history:(employee_id, job_id, start_date, end_date, department_id)
+
+1. Selecting specific columns
+Write SQL statement to find employee id, last name, first name and phone number of all employees.
+
+Select employee_id, last_name, job_id, department_id, salary
+from employees
+where department_id = 50 and salary >= 5000 order by salary desc;
+
+
+
+Practice: 1.1
+Write SQL statement to find location id, street and city.
+
+select location_id, street, city
+from employee;
+
+
+
+Practice: 1.2
+Write SQL statement to find department id, manager id, employee id and salary.
+
+select department_id, manager_id, employee_id, salary
+from employees;
+
+
+2. Arithmetic operations in columns
+Write SQL statement to find employee id, first name, last name and monthly salary.
+
+Select employee_id, first_name, last_name
+from employees
+where first_name like '%st%' or last_name like '%t%';
+
+
+Practice: 2.1
+Write SQL statement to find employee id and 5 years salary.
+
+select employee_id, (monthly_salary*60)
+from employee;
+
+
+Practice: 2.2
+Write SQL statement to find the job id and the sum of min_salary and max_salary.
+
+select job_id, min_salary, max_salary
+from employee;
+
+
+3. Defining column alias
+Write SQL statement to find id first name, last name and salary/12 as ‘Monthly Salary’
+
+select employee_id, first_name, salary
+from employees
+where salary between 5000 and 10000
+order by salary desc, first_name asc;
+
+
+
+4. Using concatenation operation
+Write SQL statement to find employee id, concatenation of first name and last name and a space between first name and last name and show column header as name.
+
+SELECT DISTINCT job_id, salary
+FROM employees;
+
+
+5. Find the (concatenated first name and last name with a space between them) as name
+Find the (concatenated first name and last name with a space between them) as name, phone number and job id of all employees whose job id field containing the word 'CLERK'. Hint: use INSTR function. If the string is present in the value, it will return the numeric position of the string, otherwise it will return 0
+
+select employee_id, first_name, job_id, hire_date
+from employees
+where job_id = 'IT_PROG' and hire_date > '2006-01-01';
+
+
+6. Multiple conditions and the use of length function
+Find the (concatenated first name and last name with a space between them) as name, length of first name, email, hire date and job id of all employees whose job id field containing the word 'CLERK' and length of first name is minimum 5 and hire date earlier than '2004-01-01'
+
+Select employee_id, salary, commission_pct, manager_id
+from employees
+where commission_pct is not null or manager_id is not null;
+
+
+
+7. Sorting of data
+Find first name, last name, hire date for all employees whose hire date is earlier than 1st January 2003. Show the result in ascending order of hire date
+
+select e.employee_id, j.job_id, j.job_title, j.min_salary
+from employees e join jobs j on j.job_id = e.job_id
+where e.department_id = 60;
+
+
+
+8. Multiple conditions and the use of length function
+Find the (concatenated first name and last name with a space between them) as name, length of first name, email, hire date and job id of all employees whose job id field containing the word 'CLERK' and length of first name is minimum 5 and hire date earlier than '2004-01-01'
+
+SELECT r.region_name, c.country_name, l.location_id, l.city
+FROM regions r
+JOIN countries c ON r.region_id = c.region_id
+JOIN locations l ON c.country_id = l.country_id
+WHERE r.region_id = 3;
+
+
