@@ -1,0 +1,86 @@
+regions:(region_id, region_name)
+ countries:(country_id, country_name, region_id)
+ locations:(location_id, street_address, postal_code, city, state_province, country_id)
+ departments:(department_id, department_name, manager_id, location_id)
+ jobs:(job_id, job_title, min_salary, max_salary)
+ employees:(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
+ job_history:(employee_id, job_id, start_date, end_date, department_id)
+
+1. Query on single table: single or multiple conditions
+Write SQL statement to find employee id, last name, job id, department id for all employees with department id = 50 and salary is higher than 5000 in descending order of salary.
+
+Select employee_id, last_name, job_id, department_id, salary
+from employees
+where department_id = 50 and salary >= 5000 order by salary desc;
+
+
+
+2. Query on single table: Sub-string search
+Write SQL statement to find employee id, first name and last name for all employees whose first name contains ‘st’ or the last name ends with t.
+
+Select employee_id, first_name, last_name
+from employees
+where first_name like '%st%' or last_name like '%t%';
+
+
+
+3. Query on single table: Between
+Write SQL statement to find employee id, first name and salary for all employees with salary between 5000 and 10000. The result of the query must be sorted in descending order of salary and ascending order of first name.
+
+select employee_id, first_name, salary
+from employees
+where salary between 5000 and 10000
+order by salary desc, first_name asc;
+
+
+4. Query on single table: Distinct
+Write SQL statement to find job id and salary for all employees. Check the result and find possible duplicates. Use DISTINCT to remove the duplicates.
+
+SELECT DISTINCT job_id, salary
+FROM employees;
+
+
+5. Query on single table: String and Date
+Write SQL statement to find employee id, first name, job id and hire date of those employees whose job id is IT_PROG and higher date after first January 2006.
+
+select employee_id, first_name, job_id, hire_date
+from employees
+where job_id = 'IT_PROG' and hire_date > '2006-01-01';
+
+
+6. Query on single table: null handling
+Write SQL statement to find employee id, salary, commission_pct, manager id of all employees whose commission pct is not null or manager id is not null.
+
+Select employee_id, salary, commission_pct, manager_id
+from employees
+where commission_pct is not null or manager_id is not null;
+
+
+7. Query on multiple tables: Cartesian product
+Write SQL statement to find employee id, job id, job title, min salary for department id = 60.
+
+select employee_id, job_id, job_title, min_salary
+from employees natural join jobs
+where department_id = 60;
+
+select e.employee_id, j.job_id, j.job_title, j.min_salary
+from employees e join jobs j on j.job_id = e.job_id
+where e.department_id = 60;
+
+
+8. Query on multiple tables: Cartesian product - 1
+Write SQL statement to find region name, country name, location id and city of region id =3.
+
+SELECT r.region_name, c.country_name, l.location_id, l.city
+FROM regions r
+JOIN countries c ON r.region_id = c.region_id
+JOIN locations l ON c.country_id = l.country_id
+WHERE r.region_id = 3;
+
+
+9. Query on multiple tables: Cartesian product - 2
+Write SQL statement to find employee id, job id and department id of employees with employee id is 150 or department id is 60.
+
+Select employee_id, job_id, department_id
+from employees
+where employee_id = 150 or department_id = 60;
