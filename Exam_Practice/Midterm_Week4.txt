@@ -1,0 +1,96 @@
+regions:(region_id, region_name)
+countries:(country_id, country_name, region_id)
+locations:(location_id, street_address, postal_code, city, state_province, country_id)
+departments:(department_id, department_name, manager_id, location_id)
+jobs:(job_id, job_title, min_salary, max_salary)
+employees:(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
+job_history:(employee_id, job_id, start_date, end_date, department_id)
+
+
+1. Single table: Use of Aggregate Functions – Query 1
+Find maximum, minimum, total and average salary of all employees.
+
+select max(salary), min(salary), sum(salary), avg(salary)
+from employees;
+
+
+
+2. Single table: Use of Aggregate Functions – Query 2
+Find the total number of employees whose salary is higher than 5000.
+
+select count(*)
+from employees
+where salary>5000;
+
+
+3. Single table: Use of Aggregate Functions – Query 3
+Find the total number of distinct salaries of employees whose salaries are higher than 5000.
+
+select count(distinct salary)
+from employees
+where salary > 5000;
+
+
+4. Single table: Use of Aggregate Functions – Query 4
+Find the total number of employees who have managers. (Employees with manager id is not null)
+
+select count(*)
+from employees
+where manager_id is not null;
+
+
+
+5. Single table: Use of Aggregate Functions – Query 5
+Find the total number of manager ids where manager id is null.
+
+select count(*)
+from employees
+where manager_id is null;
+
+
+6. Single table: Use of Group By – Query 6
+Find each department id and the number of employees in that department in descending order of number of employees.
+
+select department_id, count(*)
+from employees
+group by department_id
+order by count(*) desc;
+
+
+
+7. Single table: Use of Group By – Query 7
+Find each department id, job id and the number of employees as num_emp and the total salary as tot_sal for that department id and job id.
+
+select department_id, job_id, count(employee_id) as num_emp, sum(salary) as tot_sal
+from employees
+group by department_id, job_id;
+
+
+8. Single table: Use of Group By – Query 8
+Find the job id and the maximum, minimum and average salaries for each job id for all employees with salaries higher than 5000 and total salary less than 50000. Show the result in descending order of average salary.
+
+SELECT job_id,
+       MAX(salary),MIN(salary),
+       AVG(salary)
+FROM employees
+GROUP BY job_id
+HAVING MIN(salary) > 5000 AND SUM(salary) < 50000
+ORDER BY avg(salary) DESC;
+
+
+9. Multiple table: Use of Group By – Query 9
+Find the region name and the number of countries in each region. Hint: You need to perform Cartesian product of regions and countries and remove unnecessary tuples by applying equal condition on region id. Then apply group by.
+
+select r.region_name, count(country_id)
+from regions r join countries c on r.region_id = c.region_id
+group by r.region_name;
+
+
+
+10. Multiple table: Use of Group By – Query 10
+Find the region name and the number of locations in each region. Hint: Similar to Q. 9.
+
+select r.region_name, count(location_id)
+from regions r join countries c on r.region_id = c.region_id
+join locations l on l.country_id = c.country_id
+group by region_name;
